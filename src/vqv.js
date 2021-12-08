@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-const numbers = require("./numbers");
+const numbers = require('./numbers');
 
 /*
   Use template literals para escrever uma função que,
@@ -19,8 +19,13 @@ const numbers = require("./numbers");
 */
 
 const vqv = (string, number) => {
-  if (typeof(string) === 'string' && typeof(number) === 'number') {
-    return `Oi, meu nome é ${string}!\nTenho ${number} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`
+  if (typeof (string) === 'string' && typeof (number) === 'number') {
+    let phrase;
+    phrase = `Oi, meu nome é ${string}!\n`;
+    phrase += `Tenho ${number} anos,\n`;
+    phrase += 'trabalho na Trybe e mando muito em programação!\n';
+    phrase += '#VQV!';
+    return phrase;
   }
   return undefined;
 };
