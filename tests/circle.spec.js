@@ -31,18 +31,19 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle('')).toBe(undefined);
 
     // Teste se circle retorna um objeto.
-    expect(typeof(circle(1))).toBe('object')
+    expect(typeof(circle(1))).toBe('object');
 
     // Teste se o objeto retornado tem 3 propriedades.
-    // expect(circle(1).length)
+    expect(Object.keys(circle(1)).length).toBe(3);
 
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     expect(circle()).toBe(undefined);
 
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    expect(circle(2).circumference).toBeCloseTo(12.56, 5)
+    expect(circle(2).circumference).toBeCloseTo(12.56, 5);
 
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    expect(circle(3).area).toBeCloseTo(28.27, 5);
     
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
