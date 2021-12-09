@@ -43,18 +43,26 @@ const calculator = (number1, number2) => {
   return results;
 };
 
+const entriesConcat = (objKeys, objValues) => {
+  let objEntries = [];
+  for (let i in objKeys) {
+    // Verifica se o objeto possui a propriedade que está sendo solicitada (a do próprio 'for ... in')
+    // ref: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/HasOwnProperty
+    if (Object.prototype.hasOwnProperty.call(objKeys, i)) {
+      objEntries.push([objKeys[i], objValues[i]]);
+    }
+  }
+  return objEntries;
+};
+
 const arrayGenerator = (type, object) => {
   let objKeys = Object.keys(object);
   let objValues = Object.values(object);
-  let objEntries = [];
-  
+
   if (type === 'keys') { return objKeys; }
   if (type === 'values') { return objValues; }
   if (type === 'entries') { 
-    for (let i in Object.keys(object)) {
-      objEntries.push([objKeys[i], objValues[i]]);
-    }
-    return objEntries; 
+    return entriesConcat(objKeys, objValues);
   }
 };
 
